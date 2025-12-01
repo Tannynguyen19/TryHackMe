@@ -10,13 +10,14 @@
 
 \- [Room 2: Defensive Security Intro](#room-2-Defensive-Security-Intro)
 
-\- [Room 2: Careers in Cyber](#room-3-Careers-in-Cyber)
+\- [Room 3: Careers in Cyber](#room-3-Careers-in-Cyber)
 
+\- [Room 4: What is Networking?](#room-4-What-is-Networking?)
 
 <br />
 <h2>🧩🏴 Room 1: Offensive Security Intro</h2>
 
-* <a href="https://tryhackme.com/room/offensivesecurityintro">TryHackMe Room</a></li>
+* <a href="https://tryhackme.com/room/offensivesecurityintro">TryHackMe Room</a>
 * Difficulty: Easy
 * Tools used: 
 * Skills Learned: Linux, Enumeration, Web Exploitation
@@ -46,7 +47,7 @@
 
 <h2> 🧩🏴 Room 2: Defensive Security Intro </h2>
 
-* <a href="https://tryhackme.com/room/defensivesecurityintro">TryHackMe Room</a></li>
+* <a href="https://tryhackme.com/room/defensivesecurityintro">TryHackMe Room</a>
 * Difficulty: Easy
 * Tools used: 
 * Skills Learned: Defensive mindset    
@@ -103,48 +104,46 @@ Task: Investigate a security attack: <br />
 
 <br />
 <hr>
-<h2> 🧩🏴 Room 4: </h2>
+<h2> 🧩🏴 Room 4: What is Networking?</h2>
 
-* <a href=""> </a></li>
+* <a href="https://tryhackme.com/room/whatisnetworking"> What is Networking?</a>
 * Difficulty: Easy
 * Tools used: 
 * Skills Learned: 
 
-### 1️⃣ Task 1: 
--
-### 2️⃣ Task 2: 
--
-### 3️⃣ Task 3: 
--
-### 4️⃣ Task 4: 
--
-### 5️⃣ Task 5:
--
-### 6️⃣ Task 6:
--
-### 7️⃣ Task 7:
--
-### 8️⃣ Task 8:
--
-### 9️⃣ Task 9:
--
-### 0️⃣ Task 0:
--
+### 1️⃣ Task 1: What is Networking?
+\- That's devices connected together
+
+### 2️⃣ Task 2:  What is the Internet?
+\- A giant public network is made up of many small networks <br />
+\- It is invented by Tim Berners-Lee in 1989 (the creation of the World Wide Web)
+
+### 3️⃣ Task 3: Identifying Devices on a Network
+\- IP address (or Internet Protocol): 4 octets <br />
+\- MAC (Media Access Control): a unique address at the factory for physical network interface or microchip board inside the device. It's twelve-character hexadecimal number. First six characters represent the company that made the network interface and the last six is a unique number.
+<br />
+\- 50 billion devices connected to Internet by 2021 & IPv4 (4.29 billion) shortage => new IPv6 (>340 trillion addresses) 
+
+
+### 4️⃣ Task 4: Ping
+\- Ping uses ICMP (Internet Control Message Protocol) packets to determine the performance of a connection between devices.
+
 
 ### 🚩 Flags:
-* Task 1:
-* Task 2:
+* Task 1:`Network'
+* Task 2:`Tim Berners-Lee`
 * Task 3:
+	\- `Internet Protocol`
+	\- `Octet`
+	\- `4`
+	\- `Media Access Control`
+	\- `THM{YOU_GOT_ON_TRYHACKME}`
 * Task 4:
+	\- `ICMP`
+	\- `ping 10.10.10.10`
+	\- `THM{I_PINGED_THE_SERVER}`
 
 
-### 📌 General Notes
--
--
--
-
-
----
 
 
 
@@ -159,7 +158,7 @@ Task: Investigate a security attack: <br />
 <hr>
 <h2> 🧩🏴 Room 0: </h2>
 
-* <a href=""> </a></li>
+* <a href=""> </a>
 * Difficulty: Easy
 * Tools used: 
 * Skills Learned: 
