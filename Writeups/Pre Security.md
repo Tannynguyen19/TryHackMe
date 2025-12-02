@@ -14,6 +14,16 @@
 
 \- [Room 4: What is Networking?](#room-4-What-is-Networking?)
 
+\- [Room 5: Intro to LAN](#room-5-Intro-to-LAN)
+
+\- [Room 6: OSI Model](#room-6-OSI-Model)
+
+\- [Room 7: ](#room-7-)
+\- [Room 8: ](#room-8-)
+\- [Room 9: ](#room-9-)
+\- [Room 10: ](#room-10-)
+
+
 <br />
 <h2>🧩🏴 Room 1: Offensive Security Intro</h2>
 
@@ -146,12 +156,109 @@ Task: Investigate a security attack: <br />
 
 
 
+<br />
+<hr>
+<h2> 🧩🏴 Room 5: Intro to LAN </h2>
+
+* <a href="https://tryhackme.com/room/introtolan">Intro to LAN</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 1️⃣ Task 1: Introducing LAN Topologies
+- Topology: the design or look of the network <br />
+\- Star topology: devices connected to a central witch/hub, most commonly found because of reliability and scalability instead of the cost. <br />
+\- Bus Topology: similar to the leaf off of a tree (device ~ leaf), can't handle large data, slow and bottlenecked <br />
+\- Ring Topology (= token topology): Devices connected directly to each other to form a loop, less bottlenecks than bus topology but one cable is cut, whole network fail.
+- Switch: connect multiple devices together by MAC address (4, 8, ..., 64 ports for devices to plug into). It keep track of what device is connected to which port to forward the received packets to the intended port, so reducing network traffic & more efficient than hub (send the packets to all ports).<br />
+- Router: routing to connect networks by IP address. Switch is faster for LAN, but only routers can connect the networks.
+
+
+### 2️⃣ Task 2:  A Primer on Subnetting
+\- 
+
+### 3️⃣ Task 3: ARP
+ARP: to find MAC address in LAN, use broadcast (router prevents broadcast). 2 message types: <br />
+\-  ARP Request:  "Who has 192.168.1.20? send MAC for me" <br />
+\-  ARP Reply: "I'm 192.168.1.20 — my MAC: AA:BB:CC:DD:EE:FF” <br />
+\-  Then they save IP & MAC address into ARP table. Any device has a cache to store ARP table.
+
+
+### 4️⃣ Task 4: DHCP
+DHCP (Dynamic Host Configuration Protocol) server
+
+### 🚩 Flags:
+* Task 1: `Local Area Network`
+	\- `Routing`
+	\- `Switch`
+	\- `Bus Topology`
+	\- `Star Topology`
+	\- `THM{TOPOLOGY_FLAWS}`
+
+* Task 2: `Subnetting`
+	\- `32`
+	\- `0-255`
+	\- `Network Address`
+	\- `Host Address`
+	\- `Default Gateway`
+
+* Task 3: `Address Resolution Protocol`
+	\- `Request`
+	\- `MAC Address`
+	\- `IP Address`
+* Task 4: `DHCP Discover`
+	\- `DHCP Request`
+	\- `DHCP ACK`
+
+
+<br />
+<hr>
+<h2> 🧩🏴 Room 6: OSI Model</h2>
+
+* <a href="https://tryhackme.com/room/osimodelzi"> OSI Model</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 1️⃣ Task 1: What is the OSI Model?
+-
+### 2️⃣ Task 2: Layer 1 - Physical
+-
+### 3️⃣ Task 3: Layer 2 - Data Link 
+-
+### 4️⃣ Task 4: Layer 3 - Network
+-
+### 5️⃣ Task 5: Layer 4 - Transport
+-
+### 6️⃣ Task 6: Layer 5 - Session
+-
+### 7️⃣ Task 7: Layer 6 - Presentation
+-
+### 8️⃣ Task 8: Layer 7 - Application
+-
+### 9️⃣ Task 9: Practical - OSI Game
+-
+
+
+### 🚩 Flags:
+* Task 1:
+	\- ``
+	\- ``
+* Task 2:
+* Task 3:
+* Task 4: 
+* Task 5:
+* Task 6:
+* Task 7:
+* Task 8:
+* Task 9:
 
 
 
-
-
-
+### 📌 General Notes
+-
+-
+-
 
 
 <br />
@@ -186,6 +293,8 @@ Task: Investigate a security attack: <br />
 
 ### 🚩 Flags:
 * Task 1:
+	\- ``
+	\- ``
 * Task 2:
 * Task 3:
 * Task 4:
