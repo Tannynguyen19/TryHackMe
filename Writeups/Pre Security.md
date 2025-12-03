@@ -6,47 +6,47 @@
 <br />
 <h2>📚 Table of Contents</h2>
 
-\- [Room 1: Offensive Security Intro](#room-1-Offensive-Security-Intro)
+\- [Room 1: Offensive Security Intro](#room-1)
 
-\- [Room 2: Defensive Security Intro](#room-2-Defensive-Security-Intro)
+\- [Room 2: Defensive Security Intro](#room-2)
 
-\- [Room 3: Careers in Cyber](#room-3-Careers-in-Cyber)
+\- [Room 3: Careers in Cyber](#room-3)
 
-\- [Room 4: What is Networking?](#room-4-What-is-Networking?)
+\- [Room 4: What is Networking?](#room-4)
 
-\- [Room 5: Intro to LAN](#room-5-Intro-to-LAN)
+\- [Room 5: Intro to LAN](#room-5)
 
-\- [Room 6: OSI Model](#room-6-OSI-Model)
+\- [Room 6: OSI Model](#room-6)
 
-\- [Room 7: Packets & Frames](#room-7-Packets-&-Frames)
+\- [Room 7: Packets & Frames](#room-7)
 
-\- [Room 8: Extending Your Network](#room-8-Extending-Your-Network)
+\- [Room 8: Extending Your Network](#room-8)
 
-\- [Room 9: DNS in Detail](#room-9-DNS-in-Detail)
+\- [Room 9: DNS in Detail](#room-9)
 
-\- [Room 10: HTTP in Detail](#room-10-HTTP-in-Detail)
+\- [Room 10: HTTP in Detail](#room-10)
 
-\- [Room 11: How Websites Work](#room-11-How-Websites-Work)
+\- [Room 11: How Websites Work](#room-11)
 
-\- [Room 12: Putting it all together](#room-12-Putting-it-all-together)
+\- [Room 12: Putting it all together](#room-12)
 
-\- [Room 13: Linux Fundamentals Part 1](#room-13-Linux-Fundamentals-Part-1)
+\- [Room 13: Linux Fundamentals Part 1](#room-13)
 
-\- [Room 14: Linux Fundamentals Part 2](#room-14-Linux-Fundamentals-Part-2)
+\- [Room 14: Linux Fundamentals Part 2](#room-14)
 
-\- [Room 15: Linux Fundamentals Part 3](#room-15-Linux-Fundamentals-Part-3)
+\- [Room 15: Linux Fundamentals Part 3](#room-15)
 
-\- [Room 16: Windows Fundamentals Part 1](#room-16-Windows-Fundamentals-Part-1)
+\- [Room 16: Windows Fundamentals Part 1](#room-16)
 
-\- [Room 17: Windows Fundamentals Part 2](#room-17-Windows-Fundamentals-Part-2)
+\- [Room 17: Windows Fundamentals Part 2](#room-17)
 
-\- [Room 18: Windows Fundamentals Part 3](#room-18-Windows-Fundamentals-Part-3)
+\- [Room 18: Windows Fundamentals Part 3](#room-18)
 
-\- [Room 19: ](#room-19-)
+\- [Room 19: ](#room-19)
 
 
 <br />
-<h2>🧩🏴 Room 1: Offensive Security Intro</h2>
+<h2 id="room-1">🧩🏴 Room 1: Offensive Security Intro</h2>
 
 * <a href="https://tryhackme.com/room/offensivesecurityintro">TryHackMe Room</a>
 * Difficulty: Easy
@@ -76,7 +76,7 @@
 <br />
 <hr>
 
-<h2> 🧩🏴 Room 2: Defensive Security Intro </h2>
+<h2 id="room-2"> 🧩🏴 Room 2: Defensive Security Intro </h2>
 
 * <a href="https://tryhackme.com/room/defensivesecurityintro">TryHackMe Room</a>
 * Difficulty: Easy
@@ -120,7 +120,7 @@ Task: Investigate a security attack: <br />
 
 <br />
 <hr>
-<h2> 🧩🏴 Room 3: Careers in Cyber</h2>
+<h2 id="room-3"> 🧩🏴 Room 3: Careers in Cyber</h2>
 
 * <a href="https://tryhackme.com/room/careersincyber">Careers in Cyber</a></li>
 * Difficulty: Easy
@@ -135,7 +135,7 @@ Task: Investigate a security attack: <br />
 
 <br />
 <hr>
-<h2> 🧩🏴 Room 4: What is Networking?</h2>
+<h2 id="room-4"> 🧩🏴 Room 4: What is Networking?</h2>
 
 * <a href="https://tryhackme.com/room/whatisnetworking"> What is Networking?</a>
 * Difficulty: Easy
@@ -179,7 +179,7 @@ Task: Investigate a security attack: <br />
 
 <br />
 <hr>
-<h2> 🧩🏴 Room 5: Intro to LAN </h2>
+<h2 id="room-5"> 🧩🏴 Room 5: Intro to LAN </h2>
 
 * <a href="https://tryhackme.com/room/introtolan">Intro to LAN</a>
 * Difficulty: Easy
@@ -234,7 +234,7 @@ DHCP (Dynamic Host Configuration Protocol) server
 
 <br />
 <hr>
-<h2> 🧩🏴 Room 6: OSI Model</h2>
+<h2 id="room-6"> 🧩🏴 Room 6: OSI Model</h2>
 
 * <a href="https://tryhackme.com/room/osimodelzi"> OSI Model</a>
 * Difficulty: Easy
@@ -315,7 +315,7 @@ GUI (graphic user interface), e.g., DNS, browesr, email client, ... FTP client
 <br />
 <hr>
 
-<h2> 🧩🏴 Room 7: Packets & Frames</h2>
+<h2 id="room-7"> 🧩🏴 Room 7: Packets & Frames</h2>
 
 * <a href="https://tryhackme.com/room/osimodelzi">Packets & Frames</a>
 * Difficulty: Easy
@@ -386,7 +386,6 @@ Some well-known ports:
 ### 🚩 Flags:
 * Task 1: `Packet` 
 	\- `Frame`
-	\- ``
 * Task 2:  `checksum` 
 	\- `SYN,SYN/ACK,ACK`
 * Task 3:  `THM{TCP_CHATTER}` 
@@ -399,7 +398,7 @@ Some well-known ports:
 
 <br />
 <hr>
-<h2> 🧩🏴 Room 0: </h2>
+<h2 id="room-0"> 🧩🏴 Room 0: </h2>
 
 * <a href=""> </a>
 * Difficulty: Easy
