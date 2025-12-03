@@ -18,10 +18,31 @@
 
 \- [Room 6: OSI Model](#room-6-OSI-Model)
 
-\- [Room 7: ](#room-7-)
-\- [Room 8: ](#room-8-)
-\- [Room 9: ](#room-9-)
-\- [Room 10: ](#room-10-)
+\- [Room 7: Packets & Frames](#room-7-Packets-&-Frames)
+
+\- [Room 8: Extending Your Network](#room-8-Extending-Your-Network)
+
+\- [Room 9: DNS in Detail](#room-9-DNS-in-Detail)
+
+\- [Room 10: HTTP in Detail](#room-10-HTTP-in-Detail)
+
+\- [Room 11: How Websites Work](#room-11-How-Websites-Work)
+
+\- [Room 12: Putting it all together](#room-12-Putting-it-all-together)
+
+\- [Room 13: Linux Fundamentals Part 1](#room-13-Linux-Fundamentals-Part-1)
+
+\- [Room 14: Linux Fundamentals Part 2](#room-14-Linux-Fundamentals-Part-2)
+
+\- [Room 15: Linux Fundamentals Part 3](#room-15-Linux-Fundamentals-Part-3)
+
+\- [Room 16: Windows Fundamentals Part 1](#room-16-Windows-Fundamentals-Part-1)
+
+\- [Room 17: Windows Fundamentals Part 2](#room-17-Windows-Fundamentals-Part-2)
+
+\- [Room 18: Windows Fundamentals Part 3](#room-18-Windows-Fundamentals-Part-3)
+
+\- [Room 19: ](#room-19-)
 
 
 <br />
@@ -221,44 +242,159 @@ DHCP (Dynamic Host Configuration Protocol) server
 * Skills Learned: 
 
 ### 1️⃣ Task 1: What is the OSI Model?
--
+- OSI model (or Open Systems Interconnection Model): provides a framework dictating how all networked devices will send, receive and interpret data.
+- It's a model for data travelling between & through 7 layers, also calles as process of data encapsulation.
+
 ### 2️⃣ Task 2: Layer 1 - Physical
--
+Devices use electrical signals to transfer data between each other in binary number system: 1 or 0 (Ethernet cables)
+
 ### 3️⃣ Task 3: Layer 2 - Data Link 
--
+- Communicating in LAN, by MAC address which is unique set for Network Interface Card (NIC).
+- Data tranmission by Frame
+
 ### 4️⃣ Task 4: Layer 3 - Network
--
+- Responsible for routing & re-assembly of data takes place (from these small chunks to the larger chunk) 
+- By the protocols: OSPF (Open Shortest Path First) and RIP (Routing Information Protocol) to ensure the most optimal route (short & fast) across a network. 
+- IP address used in this layer.
+
 ### 5️⃣ Task 5: Layer 4 - Transport
--
+Transmitting data across a network and it follows 2 different protocols: 
+- TCP (Transmission Control Protocol): reliability and guarantee the accuracy of data, used for file sharing, internet browsing or sending an email. 
+- UDP (User Datagram Protocol): doesn't care if data is received or not for streaming. 
+
+<br /> E.g., Video meeting rooms
+
 ### 6️⃣ Task 6: Layer 5 - Session
--
+Manage the conversations: 
+- Responsible opening, closing a connection 
+- Save the checkpoints (where data is lost) (can continue to download a file when the connection breaks or restore 
+- Sessions are unique: data in a session cannot travel to another session, one session for communicating with one device or application only. 
+
+
 ### 7️⃣ Task 7: Layer 6 - Presentation
--
+as translator
+- SSL/TLS encryption (HTTPS) 
+- Data Compression (MP3, JPEG) 
+- ASCII <-> Unicode 
+
 ### 8️⃣ Task 8: Layer 7 - Application
--
-### 9️⃣ Task 9: Practical - OSI Game
--
+GUI (graphic user interface), e.g., DNS, browesr, email client, ... FTP client
+
 
 
 ### 🚩 Flags:
-* Task 1:
+* Task 1: `Open Systems Interconnection`
+	\- `7`
+	\- `encapsulation`
+* Task 2: `Physical`
+	\- `Binary`
+	\- `Ethernet Cables`
+* Task 3: `Data Link`
+	\- `Network Interface Card`
+* Task 4: `Network`
+	\- `Y`
+	\- `Open Shortest Path First`
+	\- `Routing Information Protocol`
+	\- `IP Addresses`
+* Task 5: `Transport`
+	\- `Transmission Control Protocol`
+	\- `User Datagram Protocol`
+	\- `TCP`
+	\- `UDP`
+	\- `TCP`
+	\- `TCP`
+	\- `UDP`
+* Task 6: `Session`
+	\- `Session`
+* Task 7: `Presentation`
+	\- `Translator`
+* Task 8: `Application`
+	\- `Graphical User Interface`
+* Task 9: `THM{OSI_DUNGEON_ESCAPED}`
+
+<br />
+<hr>
+
+<h2> 🧩🏴 Room 7: Packets & Frames</h2>
+
+* <a href="https://tryhackme.com/room/osimodelzi">Packets & Frames</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 1️⃣ Task 1: What are Packets and Frames
+Layer 2 (data link):
+- Frame: data when it does not have IP address
+\- Header layer 2 (source MAC) <br />
+\- Payload (data)<br />
+\- Trailer FCS (Frame Check Sequence) <br />
+
+Layer 3 (Internet)
+- Frame: has IP address
+\- Header layer 2 (MAC source address) <br />
+\- Payload: [ Header layer 3 (source IP) && payload (data)] <br />
+\- Trailer FCS (Frame Check Sequence) <br />
+
+
+### 2️⃣ Task 2: TCP/IP (The Three-Way Handshake)
+- TCP: the protocol guarantees that any data sent will be received on the other end & called as Three-way handshake
+- Kinds of messages are sent in TCP:
+
+\- SYN: initial packet sent from client, to initiate a connection <br />
+\- SYN/ACK: responded packet from server to acknowledge the synchronisation attempt from the client. <br />
+\- ACK: can be used by either the client or server to acknowledge that messages/packets have been successfully received <br />
+\- DATA: data segments is sent  <br />
+\- FIN: Packet to close connection safely <br />
+\- RST: packet to ends all  commmunication (immediately closing)
+
+- Any communication of TCP started with 3 handshake: SYN-SYN/ACK-ACK
+
+### 3️⃣ Task 3: Practical - Handshake
+SERVER
+| Client | Message | Server |
+|------|-------|-------|
+| SYN  | ===> |         |
+|      | <=== | SYN/ACK |
+| ACK  | <=== |     |
+| DATA | <=== |     |
+|      | <=== | ACK |
+| FIN/ACK | <=== |  |
+|      | <=== | FIN/ACK |
+|   ACK   | <=== |         |
+
+### 4️⃣ Task 4: UDP/IP
+- User Datagram Protocol (UDP) is a stateless protocol that doesn't require a constant connection between the two devices for data to be sent.
+- Faster than TCP, doesn't care if the data is received or not, & not reserve a continuous connection on a device as TCP does
+- used in video streaming or voice chat.
+
+| Client | Message | Server |
+|------|-------|-------|
+| Request | ===> |          |
+|      	  | <=== | Response |
+|      	  | <=== | Response |
+|      	  | <=== | Response |
+
+
+### 5️⃣ Task 5: Ports 101 (Practical)
+Some well-known ports:
+- 101: DNS
+- 22: SSH
+- 21: FPT
+- 80: HTTP
+- 443: HTTPS
+
+### 🚩 Flags:
+* Task 1: `Packet` 
+	\- `Frame`
 	\- ``
-	\- ``
-* Task 2:
-* Task 3:
-* Task 4: 
-* Task 5:
-* Task 6:
-* Task 7:
-* Task 8:
-* Task 9:
-
-
-
-### 📌 General Notes
--
--
--
+* Task 2:  `checksum` 
+	\- `SYN,SYN/ACK,ACK`
+* Task 3:  `THM{TCP_CHATTER}` 
+* Task 4:  `User Datagram Protocol` 
+	\- `stateless`
+	\- `TCP`
+	\- `UDP`
+* Task 5:  `THM{YOU_CONNECTED_TO_A_PORT}` 
 
 
 <br />
