@@ -2,6 +2,7 @@
 
 > Writeups for TryHackMe <br />
 > Author: Tanny Thanh Nguyen
+> <a href="https://tryhackme.com/p/ngtanny19">TryHackMe Profile</a> 
 
 <br />
 <h2>📚 Table of Contents</h2>
@@ -398,6 +399,255 @@ Some well-known ports:
 
 <br />
 <hr>
+<h2 id="room-8"> 🧩🏴 Room 8: Extending Your Network</h2>
+
+* <a href="https://tryhackme.com/room/extendingyournetwork"> Extending Your Network</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 1️⃣ Task 1:  Introduction to Port Forwarding
+NAT Router prevents all connections from Internet to protect LAN.
+Port Forwarding is technique of redirecting network traffic from one port with IP address to another port with different IP address. 
+
+- Server on laptop: `192.168.1.10:80`
+- Port Forwarding rule on router: `Public: 203.0.113.25:8080 ---> Private: 192.168.1.10:80`
+- Client can access server: `http://203.0.113.25:8080`
+
+### 2️⃣ Task 2:  Firewalls 101
+Firewall: determining what traffic is allowed to enter and exit, 2 types of firewall.
+- Stateless ( packet filtering): check soure & dest IP, port, protocol. Not check payload or data, fast & for small/family network
+- Statefull: check entire connection, packets/data based on session, slow & for enterprise, corporate.
+
+### 3️⃣ Task 3: Practical - Firewall
+Configure the firewall, set firewall rule to prevent the packets of specific IP from reaching the web sever.
+
+### 4️⃣ Task 4: VPN Basics
+Virtual Private Network (VPN) is a technology that allows devices on separate networks to communicate securely by creating a dedicated path between each other over the Internet (known as a tunnel). Devices connected within this tunnel form their own private network.
+
+- Networks in different geographical locations to be connected: can hide your real IP, website only see the VPN server's IP & its location.
+- Offers privacy & anonimity: protect you on public wifi, data is encrypted
+- 3 VPN technologies: PPP, PPTP & IPSec (use IP framework, stable, highly secure, commonly for corporate VPN, firewall)
+
+### 5️⃣ Task 5: LAN Networking Devices
+- Router: routing to connect networks, creating a path (by decide if shortest, most reliable or faster medium) between networks so data can travel between them, operate on layer 3.
+
+- Switch: a means of connecting to multiple devices, operate on layer 2 or 3.
+\- Switch on layer 2: connect mutiple devices on same network (LAN) <br />
+\- Switch on layer 3: connect mutiple networks (VLAN1 192.168.1.1, VLAN2 192.168.2.1, a network to be virtually split up) <br />
+
+
+### 🚩 Flags:
+* Task 1: `router`
+* Task 2: `3 & 4`
+	\- `stateful`
+	\- `stateless`
+* Task 3: `THM{FIREWALLS_RULE}`
+
+* Task 4: `PPP`
+	\- `IPSec`
+* Task 5: `routing`
+	\- `Layer 2,Layer 3`
+* Task 6: `THM{YOU'VE_GOT_DATA}`
+	\- `5`
+
+<br />
+<hr>
+<h2 id="room-9"> 🧩🏴 Room 9: DNS in Detail</h2>
+
+* <a href="https://tryhackme.com/room/dnsindetail"> DNS in Detail</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 1️⃣ Task 1: What is DNS?
+DNS (Domain Name System) provides a simple name for complex IP address
+
+### 2️⃣ Task 2: Domain Hierarchy
+- abc.com <br />
+.: root domain <br />
+abc: TLD (Top-Level Domain), 2 types of TLD: gTLD (Generic Top Level) & ccTLD (Country Code Top Level Domain, e.g., ***.us, ***.***.uk) <br />
+com: SLD (Second-Level Domain) <br />
+
+- admin.abd.com
+admin: subdomain
+
+- Naming rules: a-z 0-9 and hyphens (_)
+
+### 3️⃣ Task 3: Record Types
+- A record: resolve to IPv4 addresses
+
+- AAAA record: resolve to IPv6 addresses
+
+- CNAME record: resolve to another domain.
+
+- MX record: resolve to the address of the servers that handle the email for the domain
+
+- TXT record: free text fields where any text-based data can be stored.
+
+### 4️⃣ Task 4: Making A Request
+- Request a domain name => check DNS cache (return if stored) =>
+request to Recursive DNS resolver (ISP) => ISP check locally (return if found) => request root DNS => TLD servers => authoritative DNS server => Resolver caches the answer => device receive & caches IP
+
+### 🚩 Flags:
+* Task 1: `Domain Name System`
+* Task 2: `63`
+	\- `_`
+	\- `253`
+	\- `ccTLD`
+* Task 3: `MX`
+	\- `AAAA`
+* Task 4: `TTL`
+	\- `recursive`
+	\- `authoritative`
+* Task 5: `shops.myshopify.com`
+	\- `THM{7012BBA60997F35A9516C2E16D2944FF}`
+	\- `30`
+	\- `10.10.10.10`
+
+<br />
+<hr>
+<h2 id="room-10"> 🧩🏴 Room 10: HTTP in Detail</h2>
+
+* <a href="https://tryhackme.com/room/httpindetail">HTTP in Detail </a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 1️⃣ Task 1: What is HTTP(S)?
+- HTTPS (HyperText Transfer Protocol Secure) = HTTP + TLS encryption: data is encrypted and secure
+
+### 2️⃣ Task 2: Requests And Responses
+http://user:password@tryhackme.com:80/view-room?id=1#task3 (=URL)
+- http (=scheme)
+- user:password (=user)
+- tryhackme (=host/domain)
+- 80 (=port)
+- view-room (path)
+- ?id=1 (query string)
+- #task3 (fragment)
+
+### 3️⃣ Task 3: HTTP Methods
+- GET Request: get info
+- POST Request: create new records
+- PUT Request: update info
+- DELETE Request: delete info
+
+### 4️⃣ Task 4: HTTP Status Codes
+- 200: OK
+- 201: Created
+- 301: Found
+- 400: Bad request
+- 401: Not Authorised
+- 403: Forbidden
+- 404: Page Not Found
+- 405: Method Not Allowed
+- 500: Internal service error
+- 503: Service unavailable
+
+### 5️⃣ Task 5: Headers
+- Request headers are additional bits of data you can send to the web server when making requests, such as, host, user-agent, content-length, accept-encoding, cookie
+- Response header: returned to client from server, including set-cookie, cache-control, content-type, content-encoding.
+
+### 6️⃣ Task 6: Cookies
+Cookies: can be used to remind the web server who you are (authentication purpose)
+
+### 🚩 Flags:
+* Task 1: `HyperText Transfer Protocol`
+	\- `secure`
+	\- `THM{INVALID_HTTP_CERT}`
+* Task 2: `HTTP/1.1`
+	\- `Content-Length`
+* Task 3: `POST`
+	\- `PUT`
+	\- `DELETE`
+	\- `GET`
+* Task 4: `201`
+	\- `404`
+	\- `503`
+	\- `401`
+* Task 5: `User-Agent`
+	\- `Content-Type`
+	\- `Host`
+* Task 6: `Set-Cookie`
+* Task 7: `THM{YOU'RE_IN_THE_ROOM}`
+	\- `THM{YOU_FOUND_THE_BLOG}`
+	\- `THM{USER_IS_DELETED}`
+	\- `THM{USER_HAS_UPDATED}`
+	\- `THM{HTTP_REQUEST_MASTER}`
+
+<br />
+<hr>
+<h2 id="room-11"> 🧩🏴 Room 11: How Websites Work</h2>
+
+* <a href="https://tryhackme.com/room/howwebsiteswork">How Websites Work</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 1️⃣ Task 1: How websites work
+2 components that make up a website:
+- Front End (Client-Side) - the way your browser renders a website.
+- Back End (Server-Side) - a server that processes your request and returns a response.
+
+### 2️⃣ Task 2: HTML
+HyperText Markup Language (HTML) is the language websites are written in
+
+### 3️⃣ Task 3: JavaScript
+Coding language allows pages to become interactive
+
+### 4️⃣ Task 4: Sensitive Data Exposure
+Sensitive Data Exposure: sensitive clear-text information can be viewed to the end-user( frontend source code)
+
+### 5️⃣ Task 5: HTML Injection
+When a website fails to sanitise user input, attackers can inject code to the inputs
+
+### 🚩 Flags:
+* Task 1: `Front End`
+* Task 2: ``
+	\- `HTMLHERO`
+	\- `DOGHTML`
+* Task 3: `JSISFUN`
+* Task 4: `testpasswd`
+* Task 5: `HTML_INJ3CTI0N`
+
+<br />
+<hr>
+<h2 id="room-12"> 🧩🏴 Room 12: Putting it all together</h2>
+
+* <a href="https://tryhackme.com/room/puttingitalltogether">Putting it all together </a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 1️⃣ Task 1: Putting It All Together
+request a website name => Find web sever IP => connect to server => view website
+
+### 2️⃣ Task 2: Other Components
+- Load balancers: periodic checks to decide which server is best to deal with the request, also called a health check
+
+- CDN (Content Delivery Networks): used to host static files and speed up a clients visit to a website
+
+- WAF (Web Application Firewall): sits between the request and the web server to help against the hacking of a website. 
+
+### 3️⃣ Task 3: How Web Servers Work
+Web server: a software that listens for incoming connections and then utilises the HTTP protocol to deliver web content to its clients. Some web servers, such as, Apache, Nginx, IIS and NodeJS.
+
+### 🚩 Flags:
+* Task 1: ``
+* Task 2: `CDN`
+	\- `health check`
+	\- `WAF`
+* Task 3: `Virtual Hosts`
+	\- `Virtual Hosts`
+	\- `Nay`
+* Task 4: `THM{YOU_GOT_THE_ORDER}`
+
+
+
+
+<br />
+<hr>
 <h2 id="room-0"> 🧩🏴 Room 0: </h2>
 
 * <a href=""> </a>
@@ -427,12 +677,18 @@ Some well-known ports:
 -
 
 ### 🚩 Flags:
-* Task 1:
+* Task 1: ``
 	\- ``
 	\- ``
-* Task 2:
-* Task 3:
-* Task 4:
+* Task 2: ``
+	\- ``
+	\- ``
+* Task 3: ``
+	\- ``
+	\- ``
+* Task 4: ``
+	\- ``
+	\- ``
 
 
 ### 📌 General Notes
