@@ -794,6 +794,7 @@ CONTENTS & SEARCH
 - `grep "keyword" logfile.txt` : search string in files or directory
 - `grep -r -i -n --include="*.log" "keyword" .`
 - `grep -r --exclude="*.conf" "keyword" /var/log/`
+
 	`-i`: ignore 
 	`-r`: recursive, current dir and its children
 	`-l`: list file names
@@ -806,15 +807,20 @@ CONTENTS & SEARCH
 	`-o "https://[^ ]*"` : print only the matching parts, `[^ ]` not space, `*` repeat n times 
 	`-Eo "([0-9]{1,3}\.){3}[0-9]{1,3}"`: print IP address, `-E` Extended Regex ({}, +, |, () )
 	`-v "a" file.txt`: lines not having "a", "-v" invert match. 
-VIM & NANO
+
+- VIM & NANO
 
 <br /><br />
 PERMISSION & OPERATION
 - `command 1 | command 2`: pipe, output of c1 > input of c2 
+
 	`cat app.log | grep "error" | wc -l`
+
 - `command 1` &: execute command 1 in the background
+
 	ctrl + z : to stop command
 	`bg` : run command in background, now can run commands simultaneously
+
 - `command 1` && `command 2`: c2 only run if c1 succeed
 - `command 1` || `command 2`: c2 only run if c1 failed
 - `echo abc > myfile`: create myfile, content: abc
