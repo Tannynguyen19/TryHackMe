@@ -1,8 +1,8 @@
 ###### <h2>🏴 Pre Security</h2> 
 
 > Writeups for TryHackMe <br />
-> Author: Tanny Thanh Nguyen
-> <a href="https://tryhackme.com/p/ngtanny19">TryHackMe Profile</a> 
+> Author: Tanny Thanh Nguyen <br />
+> Profile: <a href="https://tryhackme.com/p/ngtanny19">TryHackMe Profile</a> 
 
 <br />
 <h2>📚 Table of Contents</h2>
@@ -643,8 +643,192 @@ Web server: a software that listens for incoming connections and then utilises t
 	\- `Nay`
 * Task 4: `THM{YOU_GOT_THE_ORDER}`
 
+<br />
+<hr>
+<h2 id="room-13"> 🧩🏴 Room 13: Linux Fundamentals Part 1</h2>
+
+* <a href="https://tryhackme.com/room/linuxfundamentalspart1">Linux Fundamentals Part 1</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
 
 
+### 🚩 Flags:
+* Task 1: ``
+* Task 2: `1991`
+* Task 3: ``
+* Task 4: `echo TryHackMe` 
+	\- `tryhackme`
+* Task 5: `4`
+	\- `folder4`
+	\- `Hello World!`
+	\- `/home/tryhackme/folder4`
+* Task 6: `THM{ACCESS}`
+* Task 7: `&`
+	\- `echo password123 > passwords`
+	\- `echo tryhackme >> passwords`
+
+### 📌 General Notes
+-
+-
+-
+
+<br />
+<hr>
+<h2 id="room-14"> 🧩🏴 Room 14: Linux Fundamentals Part 2</h2>
+
+* <a href="https://tryhackme.com/room/linuxfundamentalspart2">Linux Fundamentals Part 2</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+
+### 🚩 Flags:
+* Task 1: ``
+* Task 2: ``
+* Task 3: ``
+	\- `down`
+	\- `-h`
+* Task 4: `touch newnote`
+	\- `ASCII text`
+	\- `mv myfile myfolder`
+	\- `THM{FILESYSTEM}`
+* Task 5: `user2` 
+	\- `su user2`
+	\- ``
+	\- `THM{SU_USER2}`
+* Task 6: `` 
+	\- `/var/log`
+	\- `/tmp`
+	\- `/root` 
+
+
+### 📌 General Notes
+-
+-
+-
+
+
+<br />
+<hr>
+<h2 id="room-15"> 🧩🏴 Room 15: Linux Fundamentals Part 3</h2>
+
+* <a href="https://tryhackme.com/room/linuxfundamentalspart3">Linux Fundamentals Part 3</a>
+* Difficulty: Easy
+* Tools used: 
+* Skills Learned: 
+
+### 4️⃣ Task 4: 
+- `ssh tryhackme@10.81.181.38` connect ssh
+- `python3 -m http.server &` run http server, `&` run in background
+- Ctrl+z and enter `bg` to run it in background
+- `wget http://10.81.181.38:8000/.flag.txt` to download file
+- `jobs` to view background running jobs
+- `fg 1%` bring jobs back foreground 
+
+
+### 🚩 Flags:
+* Task 1: ``
+* Task 2: ``
+* Task 3: ``
+	\- `THM{TEXT_EDITORS}`
+* Task 4: ``
+	\- ``
+	\- `THM{WGET_WEBSERVER}`
+* Task 5: ``
+	\- `301`
+	\- `SIGTERM`
+	\- `THM{PROCESSES}`
+	\- `systemctl enable myservice`
+	\- `fg`
+* Task 6: ``
+	\- `@reboot`
+* Task 7: ``
+* Task 8: ``
+	\- ``
+	\- ``
+
+
+### 📌 General Notes
+<br /><br />
+NAVIGATION 
+- `whoami`: current user
+- `pwd`: current path (print working directory) 
+- `ls`: list files 
+- `ls -a`: list hidden file (`-a`: all)
+- `ls -lh`: (`-l`: list full info, `h`: human-readable)
+- `cd /path/of/a/folder/`: change directory
+- `cd ..` back
+- `cd ~` to home directory
+- `cd /root`: to root directory
+
+<br /><br />
+FILE & FOLDERS  
+- `touch file.txt`: create file
+- `mkdir myfolder`: make folder
+- `mkdir -p fd1/fd2/fd3`: create full directory path 
+	`-p` parent directories
+- `cp file1.txt file2.txt`: copy file
+- `cp -r folder1 folder2`: copy dir
+	`-r`: recursive, itself and all its subfolders
+- `mv file1.txt file2.txt`: rename file in this case
+- `mv file1 file2 directory/`: move files
+- `rm file.txt`: remove file
+- `rm -r folder/`: remove folder safely, ask if files can't be deleted (readonly or protected)  
+	`-r`: recursive to delete folders and all subfolders
+- `rm -rf folder/`: remove folder forcely, not ask 
+	`rf`: recursive forcely
+
+<br /><br />
+CONTENTS & SEARCH 
+- `cat file.txt`: view file content
+- `head file.txt`: view first 10 line 
+- `tail file.txt`: view last 10 lines
+- `find /path -name "*.log"`: file all files or dir .log in /path
+- `find [/path|.] -maxdepth 1 -type f -name "*.log"`
+	`.` or or `/path`: start from current dir or path. `Find` always searches recursively
+	`-name`: by name
+	`-type` (f|d): search file type only 
+	`-maxdepth` (1|2|3|...): 1-current dir, 2-current & its child, 3 ...
+- `wc -l access.log` : word count
+- `grep "keyword" logfile.txt` : search string in files or directory
+- `grep -r -i -n --include="*.log" "keyword" .`
+- `grep -r --exclude="*.conf" "keyword" /var/log/`
+	`-i`: ignore 
+	`-r`: recursive, current dir and its children
+	`-l`: list file names
+	`-n`: show in line number
+	`-c`: number of occurrences
+	`-w`: search whole word 
+	`.` : start from current directory
+	`--include="**.log|*.txt"` : find only
+	`--exclude="*.conf|*.txt"` : exclude
+	`-o "https://[^ ]*"` : print only the matching parts, `[^ ]` not space, `*` repeat n times 
+	`-Eo "([0-9]{1,3}\.){3}[0-9]{1,3}"`: print IP address, `-E` Extended Regex ({}, +, |, () )
+	`-v "a" file.txt`: lines not having "a", "-v" invert match. 
+VIM & NANO
+
+<br /><br />
+PERMISSION & OPERATION
+- `command 1 | command 2`: pipe, output of c1 > input of c2 
+	`cat app.log | grep "error" | wc -l`
+- `command 1` &: execute command 1 in the background
+	ctrl + z : to stop command
+	`bg` : run command in background, now can run commands simultaneously
+- `command 1` && `command 2`: c2 only run if c1 succeed
+- `command 1` || `command 2`: c2 only run if c1 failed
+- `echo abc > myfile`: create myfile, content: abc
+- `echo def >> myfile`: append myfile, content: abc def
+
+- `./file.sh`: run file
+- `file filename`: view file type
+- `ssh username@MACHINE_IP`: use ssh to login to a machine
+- `su username`: switch user
+- `python3 -m http.server`: run http server
+- `wget http://10.81.181.38:8000/.flag.txt`: download file
+- `scp important.txt ubuntu@10.81.181.38:/home/ubuntu/transferred.txt` upload from local
+- `scp ubuntu@10.81.181.38:/home/ubuntu/documents.txt notes.txt` copy from remote
+-
 <br />
 <hr>
 <h2 id="room-0"> 🧩🏴 Room 0: </h2>
