@@ -770,13 +770,18 @@ FILE & FOLDERS
 	`-p` parent directories
 - `cp file1.txt file2.txt`: copy file
 - `cp -r folder1 folder2`: copy dir
+
 	`-r`: recursive, itself and all its subfolders
+
 - `mv file1.txt file2.txt`: rename file in this case
 - `mv file1 file2 directory/`: move files
 - `rm file.txt`: remove file
-- `rm -r folder/`: remove folder safely, ask if files can't be deleted (readonly or protected)  
+- `rm -r folder/`: remove folder safely, ask if files can't be deleted (readonly or protected) 
+ 
 	`-r`: recursive to delete folders and all subfolders
+
 - `rm -rf folder/`: remove folder forcely, not ask 
+
 	`rf`: recursive forcely
 
 <br /><br />
@@ -786,15 +791,17 @@ CONTENTS & SEARCH
 - `tail file.txt`: view last 10 lines
 - `find /path -name "*.log"`: file all files or dir .log in /path
 - `find [/path|.] -maxdepth 1 -type f -name "*.log"`
+
 	`.` or or `/path`: start from current dir or path. `Find` always searches recursively
 	`-name`: by name
 	`-type` (f|d): search file type only 
 	`-maxdepth` (1|2|3|...): 1-current dir, 2-current & its child, 3 ...
+
 - `wc -l access.log` : word count
 - `grep "keyword" logfile.txt` : search string in files or directory
 - `grep -r -i -n --include="*.log" "keyword" .`
 - `grep -r --exclude="*.conf" "keyword" /var/log/`
-
+<pre>
 	`-i`: ignore 
 	`-r`: recursive, current dir and its children
 	`-l`: list file names
@@ -807,7 +814,7 @@ CONTENTS & SEARCH
 	`-o "https://[^ ]*"` : print only the matching parts, `[^ ]` not space, `*` repeat n times 
 	`-Eo "([0-9]{1,3}\.){3}[0-9]{1,3}"`: print IP address, `-E` Extended Regex ({}, +, |, () )
 	`-v "a" file.txt`: lines not having "a", "-v" invert match. 
-
+</pre>
 - VIM & NANO
 
 <br /><br />
@@ -825,7 +832,6 @@ PERMISSION & OPERATION
 - `command 1` || `command 2`: c2 only run if c1 failed
 - `echo abc > myfile`: create myfile, content: abc
 - `echo def >> myfile`: append myfile, content: abc def
-
 - `./file.sh`: run file
 - `file filename`: view file type
 - `ssh username@MACHINE_IP`: use ssh to login to a machine
