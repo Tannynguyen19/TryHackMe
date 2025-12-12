@@ -792,29 +792,29 @@ CONTENTS & SEARCH
 - `find /path -name "*.log"`: file all files or dir .log in /path
 - `find [/path|.] -maxdepth 1 -type f -name "*.log"`
 
-	`.` or or `/path`: start from current dir or path. `Find` always searches recursively
-	`-name`: by name
-	`-type` (f|d): search file type only 
+	`.` or or `/path`: start from current dir or path. `Find` always searches recursively <br />
+	`-name`: by name <br />
+	`-type` (f|d): search file type only  <br />
 	`-maxdepth` (1|2|3|...): 1-current dir, 2-current & its child, 3 ...
 
 - `wc -l access.log` : word count
 - `grep "keyword" logfile.txt` : search string in files or directory
 - `grep -r -i -n --include="*.log" "keyword" .`
 - `grep -r --exclude="*.conf" "keyword" /var/log/`
-<pre>
-	`-i`: ignore 
-	`-r`: recursive, current dir and its children
-	`-l`: list file names
-	`-n`: show in line number
-	`-c`: number of occurrences
-	`-w`: search whole word 
-	`.` : start from current directory
-	`--include="**.log|*.txt"` : find only
-	`--exclude="*.conf|*.txt"` : exclude
-	`-o "https://[^ ]*"` : print only the matching parts, `[^ ]` not space, `*` repeat n times 
-	`-Eo "([0-9]{1,3}\.){3}[0-9]{1,3}"`: print IP address, `-E` Extended Regex ({}, +, |, () )
+
+	`-i`: ignore <br />
+	`-r`: recursive, current dir and its children <br />
+	`-l`: list file names <br />
+	`-n`: show in line number <br />
+	`-c`: number of occurrences <br />
+	`-w`: search whole word <br />
+	`.` : start from current directory <br />
+	`--include="**.log|*.txt"` : find only <br />
+	`--exclude="*.conf|*.txt"` : exclude <br />
+	`-o "https://[^ ]*"` : print only the matching parts, `[^ ]` not space, `*` repeat n times <br />
+	`-Eo "([0-9]{1,3}\.){3}[0-9]{1,3}"`: print IP address, `-E` Extended Regex ({}, +, |, () ) <br />
 	`-v "a" file.txt`: lines not having "a", "-v" invert match. 
-</pre>
+
 - VIM & NANO
 
 <br /><br />
@@ -825,9 +825,8 @@ PERMISSION & OPERATION
 
 - `command 1` &: execute command 1 in the background
 
-	ctrl + z : to stop command
-	`bg` : run command in background, now can run commands simultaneously
-
+	ctrl + z : to stop command <br />
+	`bg` : run command in background, now can run commands simultaneously 
 - `command 1` && `command 2`: c2 only run if c1 succeed
 - `command 1` || `command 2`: c2 only run if c1 failed
 - `echo abc > myfile`: create myfile, content: abc
